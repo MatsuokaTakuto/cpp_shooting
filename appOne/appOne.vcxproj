@@ -163,7 +163,7 @@
     <ClCompile Include="PLAYER.cpp" />
     <ClCompile Include="PLAYER_BULLETS.cpp" />
     <ClCompile Include="SCENE.cpp" />
-    <ClCompile Include="STAGE.cpp" />
+    <ClCompile Include="STAGE1.cpp" />
     <ClCompile Include="TITLE.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -183,7 +183,7 @@
     <ClInclude Include="PLAYER.h" />
     <ClInclude Include="PLAYER_BULLETS.h" />
     <ClInclude Include="SCENE.h" />
-    <ClInclude Include="STAGE.h" />
+    <ClInclude Include="STAGE1.h" />
     <ClInclude Include="TITLE.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -41,7 +41,7 @@
     <ClCompile Include="TITLE.cpp">
       <Filter>scene</Filter>
     </ClCompile>
-    <ClCompile Include="STAGE.cpp">
+    <ClCompile Include="STAGE1.cpp">
       <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="GAME_CLEAR.cpp">
@@ -77,7 +77,7 @@
     <ClInclude Include="GAME_OVER.h">
       <Filter>scene</Filter>
     </ClInclude>
-    <ClInclude Include="STAGE.h">
+    <ClInclude Include="STAGE1.h">
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="SCENE.h">
