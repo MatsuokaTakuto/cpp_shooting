@@ -152,19 +152,29 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ANIM.cpp" />
+    <ClCompile Include="BOSS.cpp" />
     <ClCompile Include="BULLETS.cpp" />
+    <ClCompile Include="CERECT.cpp" />
     <ClCompile Include="CONTAINER.cpp" />
     <ClCompile Include="ENEMIES.cpp" />
+    <ClCompile Include="ENEMIES_2.cpp" />
+    <ClCompile Include="ENEMY_BULLETS.cpp" />
+    <ClCompile Include="FOURAN.cpp" />
     <ClCompile Include="GAME.cpp" />
     <ClCompile Include="GAME_CLEAR.cpp" />
     <ClCompile Include="GAME_OBJECT.cpp" />
     <ClCompile Include="GAME_OVER.cpp" />
     <ClCompile Include="gmain.cpp" />
+    <ClCompile Include="HP_GAUGE.cpp" />
+    <ClCompile Include="ORUGA.cpp" />
     <ClCompile Include="PLAYER.cpp" />
     <ClCompile Include="PLAYER_BULLETS.cpp" />
     <ClCompile Include="SCENE.cpp" />
-    <ClCompile Include="STAGE1.cpp" />
+    <ClCompile Include="STAGE.cpp" />
     <ClCompile Include="TITLE.cpp" />
+    <ClCompile Include="TRANS.cpp" />
+    <ClCompile Include="TRANS_FADE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />
@@ -173,18 +183,28 @@
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ANIM.h" />
+    <ClInclude Include="BOSS.h" />
     <ClInclude Include="BULLETS.h" />
+    <ClInclude Include="CERECT.h" />
     <ClInclude Include="CONTAINER.h" />
     <ClInclude Include="ENEMIES.h" />
+    <ClInclude Include="ENEMIES_2.h" />
+    <ClInclude Include="ENEMY_BULLETS.h" />
+    <ClInclude Include="FOURAN.h" />
     <ClInclude Include="GAME.h" />
     <ClInclude Include="GAME_CLEAR.h" />
     <ClInclude Include="GAME_OBJECT.h" />
     <ClInclude Include="GAME_OVER.h" />
+    <ClInclude Include="HP_GAUGE.h" />
+    <ClInclude Include="ORUGA.h" />
     <ClInclude Include="PLAYER.h" />
     <ClInclude Include="PLAYER_BULLETS.h" />
     <ClInclude Include="SCENE.h" />
-    <ClInclude Include="STAGE1.h" />
+    <ClInclude Include="STAGE.h" />
     <ClInclude Include="TITLE.h" />
+    <ClInclude Include="TRANS.h" />
+    <ClInclude Include="TRANS_FADE.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

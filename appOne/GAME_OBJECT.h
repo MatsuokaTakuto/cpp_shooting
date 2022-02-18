@@ -1,11 +1,11 @@
 #pragma once
-class GAME_OBJECT {
+class GAME_OBJECT
+{
 private:
-	class GAME* Game = 0;
+	class GAME* Game = nullptr;
 public:
 	GAME_OBJECT(class GAME* game);
 	virtual ~GAME_OBJECT();
-	class GAME* game() {
-		return Game;
-	}
+	class GAME* game() { return Game; }
 };
+
