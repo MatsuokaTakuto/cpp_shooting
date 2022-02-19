@@ -110,6 +110,7 @@ void BOSS::caunt() {
 }
 void BOSS::draw() {
 	for (int i = 0; i < BossEnemy.curNum; i++) {
+		rectMode(CORNER);
 		imageColor(BossEnemies[i].color);
 		image(BossEnemy.img, BossEnemies[i].pos.x, BossEnemies[i].pos.y, 0, 6);
 		game()->hpGauge()->draw(BossEnemy.BossHp, BossEnemy.hpGaugeOfst, BossEnemies[i].hp,0);

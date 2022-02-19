@@ -14,6 +14,7 @@ void PLAYER::create() {
 void PLAYER::init() {
 	Player.pos = game()->container()->player().pos;
 	Player.hp = game()->container()->player().hp;
+	Player.img = loadImage("assets\\p2.png");
 }
 void PLAYER::update() {
 	move();
@@ -38,21 +39,37 @@ void PLAYER::move() {
 }
 void PLAYER::launch() {
 	if (Player.baria != 1) {
-		if (isPress(KEY_SPACE)) {
-			Player.triggerErapsedTime += delta;
-			if (Player.triggerErapsedTime >= Player.triggerInterval) {
-				//”­ŽË‚·‚éƒxƒNƒgƒ‹‚É”­ŽË‚ð‚¸‚ç‚·‚à‚Ì‚ðŠ|‚¯ŽZ‚·‚é
-				VECTOR2 pos = Player.pos + Player.launchVec * Player.ofstLaunchDist;
-				VECTOR2 pos1 = Player.pos + Player.launchVec1 * Player.ofstLaunchDist;
-				VECTOR2 pos2 = Player.pos + Player.launchVec2 * Player.ofstLaunchDist;
-				game()->playerBullets()->launch(pos, Player.launchVec);
-				game()->playerBullets()->launch(pos1, Player.launchVec1);
-				game()->playerBullets()->launch(pos2, Player.launchVec2);
-				Player.triggerErapsedTime = 0;
+		if (game()->gatya()->gatyacaunt() == 1) {
+			if (isPress(KEY_SPACE)) {
+				Player.triggerErapsedTime += delta;
+				if (Player.triggerErapsedTime >= Player.triggerInterval) {
+					//”­ŽË‚·‚éƒxƒNƒgƒ‹‚É”­ŽË‚ð‚¸‚ç‚·‚à‚Ì‚ðŠ|‚¯ŽZ‚·‚é
+					VECTOR2 pos = Player.pos + Player.launchVec * Player.ofstLaunchDist;
+					VECTOR2 pos1 = Player.pos + Player.launchVec1 * Player.ofstLaunchDist;
+					VECTOR2 pos2 = Player.pos + Player.launchVec2 * Player.ofstLaunchDist;
+					game()->playerBullets()->launch(pos, Player.launchVec);
+					game()->playerBullets()->launch(pos1, Player.launchVec1);
+					game()->playerBullets()->launch(pos2, Player.launchVec2);
+					Player.triggerErapsedTime = 0;
+				}
+			}
+			else {
+				Player.triggerErapsedTime = 0.1f;
 			}
 		}
 		else {
-			Player.triggerErapsedTime = Player.triggerInterval;
+			if (isPress(KEY_SPACE)) {
+				Player.triggerErapsedTime += delta;
+				if (Player.triggerErapsedTime >= Player.triggerInterval) {
+					//”­ŽË‚·‚éƒxƒNƒgƒ‹‚É”­ŽË‚ð‚¸‚ç‚·‚à‚Ì‚ðŠ|‚¯ŽZ‚·‚é
+					VECTOR2 pos = Player.pos + Player.launchVec * Player.ofstLaunchDist;
+					game()->playerBullets()->launch(pos, Player.launchVec);
+					Player.triggerErapsedTime = 0;
+				}
+			}
+			else {
+				Player.triggerErapsedTime = Player.triggerInterval;
+			}
 		}
 	}
 }
@@ -88,7 +105,12 @@ void PLAYER::collision() {
 }
 void PLAYER::draw() {
 	imageColor(Player.color);
-	rectMode(CENTER);
-	Player.anim->draw(&Player.animData, Player.pos.x, Player.pos.y, 0, 4);
+	rectMode(CORNER);
+	if (game()->gatya()->gatyacaunt() == 1) {
+		image(Player.img, Player.pos.x, Player.pos.y, 0, 0.3f);
+	}
+	else{
+		Player.anim->draw(&Player.animData, Player.pos.x, Player.pos.y, 0, 4);
+	}
 	game()->hpGauge()->draw(Player.playerHp, Player.hpGaugeOfst, Player.hp,1);
 }

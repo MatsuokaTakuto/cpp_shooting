@@ -26,6 +26,10 @@ void STAGE::init() {
 	game()->bossenemy()->init();
 	game()->enemies2()->init();
 	game()->enemies()->init();
+	Stage.backImg = loadImage("assets\\StageBackImg.jpg");
+	Stage.img = loadImage("assets\\StageBackImg.jpg");
+	Stage.pos = VECTOR2(0, 0);
+
 	game()->trans()->inTrigger();
 }
 void STAGE::update() {
@@ -41,13 +45,25 @@ void STAGE::draw() {
 	BackGround();
 	game()->draw();
 	game()->trans()->draw();
-
 }
 void STAGE::BackGround() {
 	clear();
 	rectMode(CORNER);
 	imageColor(Stage.backColor);
-	image(Stage.backImg, 0, 0);
+	if(Stage.pos.x>=width){
+		Stage.pos.x = -width;
+	}
+	image(Stage.backImg, Stage.pos.x, Stage.pos.y);
+}
+void STAGE::Back() {
+	clear();
+	rectMode(CORNER);
+	imageColor(Stage.backColor);
+	if(Stage.pos1.x>=width){
+		Stage.pos1.x = -width;
+	}
+	image(Stage.img, Stage.pos1.x, Stage.pos1.y);
+
 }
 void STAGE::caunt() {
 

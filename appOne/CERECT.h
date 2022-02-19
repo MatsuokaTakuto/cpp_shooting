@@ -10,6 +10,7 @@ public:
 		float anglespeed = 0;
 		float siz = 0;
 		float sizspeed = 0;
+		int p2Img = 0;
 		int img = 0;
 		int plimg = 0;
 		int emimg = 0;

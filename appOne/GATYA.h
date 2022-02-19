@@ -6,6 +6,7 @@ class GATYA :
 {
 public:
     struct DATA {
+        int p2 = 0;
         int img = 0;
         int yosieimg = 0;
         int gatyaimg = 0;
@@ -26,5 +27,6 @@ public:
     void nextScene();
     void result();
     void gatyaimg();
+    int gatyacaunt() { return Gatya.gatyacaunt; }
 };
 

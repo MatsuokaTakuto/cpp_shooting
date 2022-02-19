@@ -21,7 +21,7 @@ void HP_GAUGE::draw(VECTOR2 pos, VECTOR2 ofst, int hp,int color) {
 		fill(HpGauge.dangerColor);
 	}
 	pos += ofst;
-	strokeWeight(10);
-	stroke(155, 155, 155);
+	strokeWeight(2);
+	stroke(255, 255, 255);
 	rect(pos.x, pos.y, hp * HpGauge.coWidth, HpGauge.hi);
 }

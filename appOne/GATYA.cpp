@@ -16,6 +16,7 @@ void GATYA::init(){
 	Gatya = game()->container()->gatya();
 	Gatya.img = loadImage("assets\\gatya3.png");
 	Gatya.gatyaimg = loadImage("assets\\gatya3.png");
+	Gatya.p2 = loadImage("assets\\p2.png");
 	Gatya.caunt = 0;
 	Gatya.gatyacaunt = 0;
 }
@@ -44,10 +45,12 @@ void GATYA::result() {
 	image(Gatya.gatyaimg, width / 2, height / 2,0,2);
 	rectMode(CORNER);
 	fill(255, 255, 255);
-	//Œ‹‰Ê
-	rect(720, 340, 400, 400);
 	//–ß‚éƒ{ƒ^ƒ“
 	rect(50, 50, 440, 160);
+	//Œ‹‰Ê
+	fill(255, 255, 0);
+	rect(720, 340, 400, 400);
+	image(Gatya.p2, 720, 340);
 
 	fill(0, 0, 0);
 	textSize(80);

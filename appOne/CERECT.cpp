@@ -12,6 +12,8 @@ CERECT::~CERECT() {
 }
 void CERECT::init() {
 	game()->trans()->inTrigger();
+	Cerect.p2Img = loadImage("assets\\p2.png");
+	Cerect.plimg = loadImage("assets\\players\\0\\pipo-airship01.png");
 	Cerect.angle = 0;
 	Cerect.siz = 0.1f;
 }
@@ -27,22 +29,29 @@ void CERECT::setu() {
 	fill(255,255,255);
 	text("ルール説明", 10, 210);
 	textSize(80);
-	text("BOSSの", 980, 420);
-	text("PLAYERの", 980, 640);
-	text("がなくなる前に", 980, 530);
-	text("をゼロにしよう！", 980, 750);
+	text("<W,A,S,D>で移動", 1050, 200);
+	text("<SPACE>で弾を発射", 1050, 310);
+	text("BOSSの", 1050, 640);
+	text("PLAYERの", 1050, 420);
+	text("がなくなる前に", 1050, 530);
+	text("をゼロにしよう！", 1050, 750);
 	fill(0, 255, 0);
 	text("PLAYER", 60, 410);
-	text("HP", 980 + 250, 420);
+	text("HP", 1050 + 330, 420);
 	fill(255, 0, 0);
 	text("BOSS", 600, 410);
-	text("HP", 980 + 330, 640);
+	text("HP", 1050 + 250, 640);
 	text("<SPACE>でスタート!",width/2-360,950);
 	imageColor(255, 255, 255);
-	Cerect.plimg = loadImage("assets\\players\\0\\pipo-airship01.png");
-	image(Cerect.plimg, 160, 520, 0, 4);
 	Cerect.emimg = loadImage("assets\\enemy_3.png");
 	image(Cerect.emimg, 650, 520, 0, 4);
+	if (game()->gatya()->gatyacaunt() == 1) {
+		image(Cerect.p2Img, 160, 520, 0, 0.3f);
+	}
+	else {
+		image(Cerect.plimg, 160, 520, 0, 4);
+
+	}
 }
 void CERECT::abe() {
 	Cerect.img = loadImage("assets\\abe.jpg");

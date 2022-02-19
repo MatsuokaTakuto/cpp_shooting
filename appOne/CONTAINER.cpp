@@ -63,7 +63,7 @@ void CONTAINER::setData() {
 	Data.player.triggerInterval = 0.2f;
 	Data.player.ofstLaunchDist = 100;
 	Data.player.bcRadius = 60;
-	Data.player.invincibleTime = 0.2f;
+	Data.player.invincibleTime = 0.1f;
 	Data.player.invincibleRestTime = 0;
 
 	Data.player.hp = 100;
@@ -129,11 +129,11 @@ void CONTAINER::setData() {
 	Data.bossenemy.ofstLaunchDist = 100;
 	Data.bossenemy.bcRadius = 60;
 	Data.bossenemy.invincibleTime = 0.1f;
-	Data.bossenemy.initHp = 100;
 	Data.bossenemy.hpGaugeOfst = VECTOR2(0, 0);
 	Data.bossenemy.collisionColor = COLOR(255, 0, 0, 25);
 	Data.bossenemy.normalColor = COLOR(255, 255, 255);
 
+	Data.bossenemy.initHp = 100;
 
 
 	Data.playerBullet.totalNum = 50;
@@ -165,7 +165,7 @@ void CONTAINER::loadGraphic() {
 
 	Data.playerBullet.img = loadImage("assets\\pBullets.png");
 
-	Data.enemyBullet.img = loadImage("assets\\eBullets.png");
+	Data.enemyBullet.img = loadImage("assets\\eBullets2.png");
 
 	Data.fouran.anim = new ANIM("assets\\fou");
 	Data.fouran.animData.interval = 0.7f;

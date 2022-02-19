@@ -5,16 +5,20 @@ class STAGE :
 {
 public:
 	struct DATA {
+		VECTOR2 pos;
+		VECTOR2 pos1;
 		int Ex = 0;
 		int backImg = 0;
+		int img = 0;
 		COLOR backColor;
 	};
 private:
 	DATA Stage;
-	void BackGround();
 public:
 	STAGE(class GAME* game);
 	~STAGE();
+	void Back();
+	void BackGround();
 	void caunt();
 	void create();
 	void init();
