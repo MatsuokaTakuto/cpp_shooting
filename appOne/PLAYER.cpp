@@ -37,17 +37,23 @@ void PLAYER::move() {
 	}
 }
 void PLAYER::launch() {
-	if (isPress(KEY_SPACE)) {
-		Player.triggerErapsedTime += delta;
-		if (Player.triggerErapsedTime >= Player.triggerInterval) {
-			//”­ŽË‚·‚éƒxƒNƒgƒ‹‚É”­ŽË‚ð‚¸‚ç‚·‚à‚Ì‚ðŠ|‚¯ŽZ‚·‚é
-			VECTOR2 pos = Player.pos + Player.launchVec * Player.ofstLaunchDist;
-			game()->playerBullets()->launch(pos, Player.launchVec);
-			Player.triggerErapsedTime = 0;
+	if (Player.baria != 1) {
+		if (isPress(KEY_SPACE)) {
+			Player.triggerErapsedTime += delta;
+			if (Player.triggerErapsedTime >= Player.triggerInterval) {
+				//”­ŽË‚·‚éƒxƒNƒgƒ‹‚É”­ŽË‚ð‚¸‚ç‚·‚à‚Ì‚ðŠ|‚¯ŽZ‚·‚é
+				VECTOR2 pos = Player.pos + Player.launchVec * Player.ofstLaunchDist;
+				VECTOR2 pos1 = Player.pos + Player.launchVec1 * Player.ofstLaunchDist;
+				VECTOR2 pos2 = Player.pos + Player.launchVec2 * Player.ofstLaunchDist;
+				game()->playerBullets()->launch(pos, Player.launchVec);
+				game()->playerBullets()->launch(pos1, Player.launchVec1);
+				game()->playerBullets()->launch(pos2, Player.launchVec2);
+				Player.triggerErapsedTime = 0;
+			}
 		}
-	}
-	else {
-		Player.triggerErapsedTime = Player.triggerInterval;
+		else {
+			Player.triggerErapsedTime = Player.triggerInterval;
+		}
 	}
 }
 //“–‚½‚è”»’è
@@ -64,12 +70,19 @@ void PLAYER::collision() {
 		for (int i = bullets->curNum() - 1; i >= 0; i--) {
 			VECTOR2 vec = Player.pos - bullets->pos(i);
 			if (sqLength(vec) < sqDistance) {
+				Player.baria = 0;
 				Player.invincibleRestTime = Player.invincibleTime;
 				Player.color = Player.collisionColor;
 				Player.hp = Player.hp - 2;
 				bullets->kill(i);
 				i = 0;
 			}
+
+
+
+
+
+
 		}
 	}
 }

@@ -9,6 +9,7 @@ public:
     struct DATA {
         class ANIM* anim = nullptr;
         ANIM_DATA animData;
+        int baria;
         int img;
         VECTOR2 pos;
         VECTOR2 playerHp;
@@ -20,6 +21,8 @@ public:
 
         //発射方向
         VECTOR2 launchVec;
+        VECTOR2 launchVec1;
+        VECTOR2 launchVec2;
         //発射してからの経過時間
         float triggerErapsedTime;
         //経過時間がインターバルを超えたら発射させるようにする
@@ -39,6 +42,9 @@ public:
         COLOR collisionColor;
         COLOR normalColor;
         COLOR color;
+
+        VECTOR2 playerbr;
+        int br;
     };
 private:
     DATA Player;

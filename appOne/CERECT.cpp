@@ -37,6 +37,7 @@ void CERECT::setu() {
 	fill(255, 0, 0);
 	text("BOSS", 600, 410);
 	text("HP", 980 + 330, 640);
+	text("<SPACE>でスタート!",width/2-360,950);
 	imageColor(255, 255, 255);
 	Cerect.plimg = loadImage("assets\\players\\0\\pipo-airship01.png");
 	image(Cerect.plimg, 160, 520, 0, 4);
@@ -53,6 +54,9 @@ void CERECT::abe() {
 void CERECT::nextScene() {
 	if (isTrigger(KEY_SPACE)) {
 		game()->trans()->outTrigger();
+	}
+	else if (isTrigger(KEY_SHIFT)) {
+		game()->setCurScene(game()->gatya());
 	}
 	if (game()->trans()->outEndFlag()) {
 		game()->setCurScene(game()->stage());

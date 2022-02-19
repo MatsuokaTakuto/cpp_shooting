@@ -41,6 +41,7 @@ void STAGE::draw() {
 	BackGround();
 	game()->draw();
 	game()->trans()->draw();
+
 }
 void STAGE::BackGround() {
 	clear();
@@ -55,10 +56,10 @@ void STAGE::nextScene() {
 	if (game()->bossenemy()->curNum()<=0) {
 		game()->trans()->outTrigger();
 	}
-	else if (game()->player()->hp() <= 0) {
+	if (game()->player()->hp() <= 0) {
 		game()->setCurScene(game()->geme_over());
 	}
-	if (game()->trans()->outEndFlag()) {
+	else if (game()->trans()->outEndFlag()) {
 		game()->setCurScene(game()->game_clear());
 	}
 }

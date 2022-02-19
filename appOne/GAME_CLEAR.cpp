@@ -13,20 +13,22 @@ GAME_CLEAR::~GAME_CLEAR() {
 }
 void GAME_CLEAR::init() {
 	game()->trans()->inTrigger();
+	GameClear.img = loadImage("assets\\gameclear.png");
+	GameClear.backimg = loadImage("assets\\clearback.jpg");
 }
 void GAME_CLEAR::draw() {
 	clear();
-	fill(0, 255, 0);
-	textSize(255);
-	text("Game Clear", 400, 600);
 	back();
+	fill(0, 255, 0);
+	textSize(250);
+	text("Game Clear", 980-563, 600);
 	game()->trans()->draw();
 }
 void GAME_CLEAR::back() {
-	GameClear.img = loadImage("assets\\StageBackImg.jpg");
 	rectMode(CENTER);
 	imageColor(255, 255, 255);
-	image(GameClear.img, width / 2, height / 2, 0, 2);
+	image(GameClear.backimg, width / 2, height / 2);
+	image(GameClear.img, width / 2, height / 2, 0, 1.2f);
 }
 void GAME_CLEAR::nextScene() {
 	if (isTrigger(KEY_SPACE)) {

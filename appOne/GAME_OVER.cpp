@@ -9,6 +9,7 @@
 #include "GAME_OVER.h"
 #include"TRANS.h"
 #include"ORUGA.h"
+#include"GATYA_ANIM.h"
 GAME_OVER::GAME_OVER(class GAME* game) :
 	SCENE(game) {
 
@@ -18,6 +19,7 @@ GAME_OVER::~GAME_OVER() {
 }
 void GAME_OVER::init() {
 	game()->trans()->inTrigger();
+	GameOver.img = loadImage("assets\\gameoverback.png");
 }
 void GAME_OVER::update() {
 	game()->playerBullets()->update();
@@ -25,12 +27,18 @@ void GAME_OVER::update() {
 
 }
 void GAME_OVER::draw() {
+	game()->trans()->draw();
 	clear();
+	back();
 	fill(255, 0, 0);
 	textSize(255);
 	text("Game Over", 400, 600);
 	game()->oruga()->draw();
-	game()->trans()->draw();
+}
+void GAME_OVER::back() {
+	rectMode(CENTER);
+	imageColor(255, 255, 255);
+	image(GameOver.img, width / 2, height / 2, 0, 2);
 }
 void GAME_OVER::nextScene() {
 	if (isTrigger(KEY_SPACE)) {

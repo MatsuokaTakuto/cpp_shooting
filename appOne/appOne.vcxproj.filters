@@ -17,6 +17,9 @@
     <Filter Include="container">
       <UniqueIdentifier>{1eafcbc1-7cb7-4c96-838f-96dc00be0a9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="asobi">
+      <UniqueIdentifier>{88f13b1b-7441-43bc-8c14-e05fd1c54ed6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc">
@@ -65,11 +68,21 @@
     <ClCompile Include="SCENE.cpp">
       <Filter>scene\base</Filter>
     </ClCompile>
-    <ClCompile Include="FOURAN.cpp" />
     <ClCompile Include="CERECT.cpp">
       <Filter>scene</Filter>
     </ClCompile>
-    <ClCompile Include="ORUGA.cpp" />
+    <ClCompile Include="ORUGA.cpp">
+      <Filter>asobi</Filter>
+    </ClCompile>
+    <ClCompile Include="FOURAN.cpp">
+      <Filter>asobi</Filter>
+    </ClCompile>
+    <ClCompile Include="GATYA.cpp">
+      <Filter>asobi</Filter>
+    </ClCompile>
+    <ClCompile Include="GATYA_ANIM.cpp">
+      <Filter>asobi</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CONTAINER.h">
@@ -108,7 +121,17 @@
     <ClInclude Include="SCENE.h">
       <Filter>scene\base</Filter>
     </ClInclude>
-    <ClInclude Include="FOURAN.h" />
-    <ClInclude Include="ORUGA.h" />
+    <ClInclude Include="ORUGA.h">
+      <Filter>asobi</Filter>
+    </ClInclude>
+    <ClInclude Include="FOURAN.h">
+      <Filter>asobi</Filter>
+    </ClInclude>
+    <ClInclude Include="GATYA.h">
+      <Filter>asobi</Filter>
+    </ClInclude>
+    <ClInclude Include="GATYA_ANIM.h">
+      <Filter>asobi</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

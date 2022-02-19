@@ -12,6 +12,8 @@
 #include"HP_GAUGE.h"
 #include"FOURAN.h"
 #include"ORUGA.h"
+#include"GATYA_ANIM.h"
+#include"GATYA.h"
 class CONTAINER
 {
 	struct DATA {
@@ -29,6 +31,8 @@ class CONTAINER
 		BULLETS::DATA enemyBullet;
 		HP_GAUGE::DATA hpGauge;
 		FOURAN::DATA fouran;
+		GATYA_ANIM::DATA GatyaAnim;
+		GATYA::DATA Gatya;
 	};
 	DATA Data;
 public:
@@ -50,4 +54,6 @@ public:
 	const HP_GAUGE::DATA& hpGauge() { return Data.hpGauge; }
 	const FOURAN::DATA& fouran() { return Data.fouran; }
 	const ORUGA::DATA& oruga() { return Data.oruga; }
+	const GATYA_ANIM::DATA& gatyaanim() { return Data.GatyaAnim; }
+	const GATYA::DATA& gatya() { return Data.Gatya; }
 };

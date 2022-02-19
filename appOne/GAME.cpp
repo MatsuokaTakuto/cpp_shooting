@@ -16,6 +16,8 @@
 #include"GAME.h"
 #include"FOURAN.h"
 #include"ORUGA.h"
+#include"GATYA_ANIM.h"
+#include"GATYA.h"
 GAME::GAME() {
 	Container = new CONTAINER;
 
@@ -38,6 +40,8 @@ GAME::GAME() {
 
 	FouRan = new FOURAN(this);
 	Oruga = new ORUGA(this);
+	GatyaAnim = new GATYA_ANIM(this);
+	Gatya = new GATYA(this);
 }
 GAME::~GAME() {
 	delete Trans;
@@ -59,6 +63,8 @@ GAME::~GAME() {
 	delete Container;
 	delete FouRan;
 	delete Oruga;
+	delete GatyaAnim;
+	delete Gatya;
 }
 void GAME::run() {
 	window(1920, 1080, full);
@@ -85,6 +91,8 @@ void GAME::run() {
 
 	FouRan->create();
 	Oruga->create();
+	GatyaAnim->create();
+	Gatya->create();
 
 	CurScene = Title;
 	CurScene->init();

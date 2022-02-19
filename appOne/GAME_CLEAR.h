@@ -7,6 +7,7 @@ class GAME_CLEAR :
 public:
     struct DATA {
         int img = 0;
+        int backimg = 0;
         COLOR backColor;
         COLOR textColor;
         float textSize;

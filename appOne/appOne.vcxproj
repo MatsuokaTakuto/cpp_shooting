@@ -165,6 +165,8 @@
     <ClCompile Include="GAME_CLEAR.cpp" />
     <ClCompile Include="GAME_OBJECT.cpp" />
     <ClCompile Include="GAME_OVER.cpp" />
+    <ClCompile Include="GATYA.cpp" />
+    <ClCompile Include="GATYA_ANIM.cpp" />
     <ClCompile Include="gmain.cpp" />
     <ClCompile Include="HP_GAUGE.cpp" />
     <ClCompile Include="ORUGA.cpp" />
@@ -196,6 +198,8 @@
     <ClInclude Include="GAME_CLEAR.h" />
     <ClInclude Include="GAME_OBJECT.h" />
     <ClInclude Include="GAME_OVER.h" />
+    <ClInclude Include="GATYA.h" />
+    <ClInclude Include="GATYA_ANIM.h" />
     <ClInclude Include="HP_GAUGE.h" />
     <ClInclude Include="ORUGA.h" />
     <ClInclude Include="PLAYER.h" />

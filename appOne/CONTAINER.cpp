@@ -4,6 +4,7 @@ CONTAINER::~CONTAINER() {
 	delete Data.player.anim;
 	delete Data.fouran.anim;
 	delete Data.oruga.anim;
+	delete Data.GatyaAnim.anim;
 }
 void CONTAINER::load() {
 	setData();
@@ -18,6 +19,9 @@ void CONTAINER::setData() {
 
 	Data.oruga.pos = VECTOR2(width / 2, height / 2);
 	Data.oruga.color = COLOR(255, 255, 255);
+
+	Data.GatyaAnim.pos = VECTOR2(width / 2, height / 2);
+	Data.GatyaAnim.color = COLOR(255, 255, 255);
 
 	Data.title.backColor = COLOR(0, 0, 0);
 	Data.title.textColor = COLOR(255, 0, 0);
@@ -50,17 +54,21 @@ void CONTAINER::setData() {
 
 	Data.player.limmitW = 100;
 	Data.player.limmitH = 100;
-	Data.player.launchVec = VECTOR2(1, 0);
+	Data.player.launchVec = VECTOR2(3, 0);
+
+	Data.player.launchVec1 = VECTOR2(3, 1);
+	Data.player.launchVec2 = VECTOR2(3, -1);
+
 	Data.player.triggerErapsedTime = 0;
 	Data.player.triggerInterval = 0.2f;
 	Data.player.ofstLaunchDist = 100;
-	Data.player.bcRadius = 40;
+	Data.player.bcRadius = 60;
 	Data.player.invincibleTime = 0.2f;
 	Data.player.invincibleRestTime = 0;
 
 	Data.player.hp = 100;
 
-	Data.player.playerHp.x = 0;
+	Data.player.playerHp.x = 50;
 	Data.player.playerHp.y = 20;
 	Data.player.hpGaugeOfst = VECTOR2(0, 0);
 	Data.player.collisionColor = COLOR(255, 0, 0, 75);
@@ -78,7 +86,7 @@ void CONTAINER::setData() {
 	Data.enemy.thetaSpeed = 0.6f;
 	Data.enemy.triggerInterval = 0.72f;
 	Data.enemy.ofstLaunchDist = 100;
-	Data.enemy.bcRadius = 40;
+	Data.enemy.bcRadius = 60;
 	Data.enemy.invincibleTime = 0.1f;
 	Data.enemy.initHp = 3;
 	Data.enemy.hpGaugeOfst = VECTOR2(0, -120);
@@ -98,7 +106,7 @@ void CONTAINER::setData() {
 	Data.enemy2.thetaSpeed = 0.6f;
 	Data.enemy2.triggerInterval = 1.0f;
 	Data.enemy2.ofstLaunchDist = 100;
-	Data.enemy2.bcRadius = 40;
+	Data.enemy2.bcRadius = 60;
 	Data.enemy2.invincibleTime = 0.1f;
 	Data.enemy2.initHp = 3;
 	Data.enemy2.hpGaugeOfst = VECTOR2(0, 0);
@@ -108,8 +116,8 @@ void CONTAINER::setData() {
 	Data.bossenemy.totalNum = 1;
 
 	Data.bossenemy.curNum = Data.bossenemy.totalNum;
-	Data.bossenemy.BossHp.x = 0;
-	Data.bossenemy.BossHp.y = 60;
+	Data.bossenemy.BossHp.x = 50;
+	Data.bossenemy.BossHp.y = 50;
 	Data.bossenemy.majRadius = 100;
 	Data.bossenemy.minRadius = 300;
 	Data.bossenemy.centerPos = VECTOR2(2300, height / 2);
@@ -119,28 +127,28 @@ void CONTAINER::setData() {
 	Data.bossenemy.thetaSpeed = 0.6f;
 	Data.bossenemy.triggerInterval = 0.5f;
 	Data.bossenemy.ofstLaunchDist = 100;
-	Data.bossenemy.bcRadius = 40;
+	Data.bossenemy.bcRadius = 60;
 	Data.bossenemy.invincibleTime = 0.1f;
-	Data.bossenemy.initHp = 10;
+	Data.bossenemy.initHp = 100;
 	Data.bossenemy.hpGaugeOfst = VECTOR2(0, 0);
 	Data.bossenemy.collisionColor = COLOR(255, 0, 0, 25);
 	Data.bossenemy.normalColor = COLOR(255, 255, 255);
 
 
 
-	Data.playerBullet.totalNum = 30;
+	Data.playerBullet.totalNum = 50;
 	Data.playerBullet.curNum = 0;
 	Data.playerBullet.advSpeed = 600;
 	Data.playerBullet.angSpeed = 5;
-	Data.playerBullet.bcRadius = 20;
+	Data.playerBullet.bcRadius = 30;
 
-	Data.enemyBullet.totalNum = 30;
+	Data.enemyBullet.totalNum = 35;
 	Data.enemyBullet.curNum = 0;
-	Data.enemyBullet.advSpeed = 600;
+	Data.enemyBullet.advSpeed = 500;
 	Data.enemyBullet.angSpeed = 0;
 	Data.enemyBullet.bcRadius = 20;
 
-	Data.hpGauge.coWidth = 30;
+	Data.hpGauge.coWidth = 18;
 	Data.hpGauge.hi = 15;
 	Data.hpGauge.safeColor = COLOR(0, 255, 0);
 	Data.hpGauge.dangerColor = COLOR(255, 0, 0);
@@ -167,4 +175,7 @@ void CONTAINER::loadGraphic() {
 
 	Data.oruga.anim = new ANIM("assets\\oruga");
 	Data.oruga.animData.interval = 0.05f;
+
+	Data.GatyaAnim.anim = new ANIM("assets\\GatyaAnim");
+	Data.GatyaAnim.animData.interval = 0.04f;
 }

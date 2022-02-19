@@ -25,6 +25,8 @@ private:
 
 	class FOURAN* FouRan = nullptr;
 	class ORUGA* Oruga = nullptr;
+	class GATYA_ANIM* GatyaAnim = nullptr;
+	class GATYA* Gatya = nullptr;
 public:
 	void draw();
 	class TITLE* title() { return Title; }
@@ -45,6 +47,8 @@ public:
 
 	class FOURAN* fouran() { return FouRan; }
 	class ORUGA* oruga() { return Oruga; }
+	class GATYA_ANIM* gatyaanim() { return GatyaAnim; }
+	class GATYA* gatya() { return Gatya; }
 	void setCurScene(class SCENE* scene);
 public:
 	GAME();

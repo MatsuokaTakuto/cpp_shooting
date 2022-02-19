@@ -16,23 +16,20 @@ void TITLE::create() {
 }
 void TITLE::init() {
 	game()->trans()->inTrigger();
+	Title.img = loadImage("assets\\titleimg.jpg");
 }
 void TITLE::draw() {
 	clear();
 	back();
-	fill(Title.textColor);
-	textSize(Title.textSize);
-	text(Title.str, Title.pos.x, Title.pos.y);
 	textSize(75);
-	fill(255, 255, 255);
+	fill(0, 0, 0);
 	text("<SPACEでスタート>", width / 2-(4*75), height / 2 + 400);
 	game()->trans()->draw();
 }
 void TITLE::back() {
-	Title.img = loadImage("assets\\titleimg.jpg");
 	rectMode(CENTER);
 	imageColor(255, 255, 255);
-	image(Title.img, width / 2, height / 2, 0, 7);
+	image(Title.img, width / 2, height / 2, 0, 0.4f);
 }
 void TITLE::nextScene() {
 	if (isTrigger(KEY_SPACE)) {

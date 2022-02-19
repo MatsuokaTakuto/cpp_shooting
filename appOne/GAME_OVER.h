@@ -5,6 +5,7 @@ class GAME_OVER :
 {
 public:
     struct DATA {
+        int img = 0;
         COLOR backColor;
         COLOR textColor;
         float textSize;
@@ -20,6 +21,7 @@ public:
     void init();
     void update();
     void draw();
+    void back();
     void nextScene();
 };
 
