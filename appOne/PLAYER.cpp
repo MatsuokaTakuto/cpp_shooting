@@ -105,12 +105,13 @@ void PLAYER::collision() {
 }
 void PLAYER::draw() {
 	imageColor(Player.color);
-	rectMode(CORNER);
+	rectMode(CENTER);
 	if (game()->gatya()->gatyacaunt() == 1) {
 		image(Player.img, Player.pos.x, Player.pos.y, 0, 0.3f);
 	}
 	else{
 		Player.anim->draw(&Player.animData, Player.pos.x, Player.pos.y, 0, 4);
 	}
+	rectMode(CORNER);
 	game()->hpGauge()->draw(Player.playerHp, Player.hpGaugeOfst, Player.hp,1);
 }
